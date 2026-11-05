@@ -1,0 +1,15 @@
+# CI definition. Activate by moving this file to .github/workflows/ci.yml
+# (kept under docs/ because the GitHub App used for pushing lacks the
+# Workflows permission and rejects files under .github/workflows/).
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: make test

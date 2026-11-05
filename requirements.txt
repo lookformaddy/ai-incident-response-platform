@@ -1,0 +1,6 @@
+# Core library: pure stdlib, no runtime dependencies.
+# Test + optional API dependencies:
+pytest>=8.0
+fastapi>=0.110
+uvicorn>=0.29
+httpx>=0.27
